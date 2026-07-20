@@ -21,6 +21,7 @@ ignore = ["E501", "B008", "UP007", "PIE790"]
 "scripts/*" = ["PLC0415", "T201"]
 "tests/*" = ["S101", "PLC0415"]
 "conftest.py" = ["PLC0415"]
+"src/services/diagnostics.py" = ["PLC0415", "I001"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
