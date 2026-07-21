@@ -41,7 +41,23 @@ def run_store_forecast(
         if len(train_df) == 0 or len(test_df) == 0:
             raise ValueError(f"test_size={test_size} leaves no train or test rows for store {store_id}")
 
-        diagnostics.check_stationarity(train_df["Sales"].dropna())
+        stationarity_result = diagnostics.check_stationarity(train_df["Sales"].dropna())
+        causality_result = None
+        cointegration_result = None
+        try:
+            diag_df = train_df[["Sales", "Customers"]].dropna()
+            causality_result = diagnostics.granger_causality(diag_df)
+            cointegration_result = diagnostics.cointegration_rank(diag_df)
+        except Exception:
+            logger.warning("Diagnostics unavailable for store %s (causality/cointegration)", store_id, exc_info=True)
+
+        logger.info(
+            "Diagnostics for store %s: stationarity=%s, causality=%s, cointegration_rank=%s",
+            store_id,
+            stationarity_result,
+            causality_result,
+            cointegration_result,
+        )
 
         endog_cols = ["Sales", "Customers"]
         exog_cols = [

@@ -52,6 +52,20 @@ def test_run_store_forecast_returns_none_on_provider_failure():
     assert result is None
 
 
+def test_run_store_forecast_logs_diagnostics(caplog):
+    store_df = _make_store_df()
+    with caplog.at_level("INFO", logger="src.services.forecast_service"):
+        result = run_store_forecast(store_id=1, store_df=store_df, provider=_StubProvider(), test_size=5)
+
+    assert result is not None
+    diagnostics_records = [r.message for r in caplog.records if "Diagnostics for store 1" in r.message]
+    assert diagnostics_records, "expected a diagnostics log line for store 1"
+    log_line = diagnostics_records[0]
+    assert "stationarity" in log_line
+    assert "causality" in log_line
+    assert "cointegration_rank" in log_line
+
+
 def test_run_forecast_pipeline_isolates_failures():
     data = pd.concat([_make_store_df(store_id=1), _make_store_df(store_id=2)], ignore_index=True)
 

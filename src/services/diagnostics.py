@@ -12,7 +12,7 @@ def check_stationarity(series: pd.Series) -> dict[str, float | bool]:
 def granger_causality(df: pd.DataFrame, maxlag: int = 1) -> dict[int, dict[str, float]]:
     from statsmodels.tsa.stattools import grangercausalitytests
 
-    results = grangercausalitytests(df.dropna(), maxlag, verbose=False)
+    results = grangercausalitytests(df.dropna(), maxlag)
     return {lag: {"p_value": float(result[0]["ssr_ftest"][1])} for lag, result in results.items()}
 
 
