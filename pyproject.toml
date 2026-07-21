@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "trend-whisperer"
 version = "0.1.0"
-description = ""
+description = "Per-store sales forecasting (VAR/VARMAX/VECM) with GenAI narrative generation, built on sameer-forge."
 readme = "README.md"
 requires-python = ">=3.11"
 
