@@ -14,7 +14,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
-      - run: pip install -r requirements.txt
+      - run: pip install -r requirements.txt pytest==8.*
       - run: pytest tests/unit/ -v --tb=short
       - run: pytest tests/integration/ -v --tb=short
 
