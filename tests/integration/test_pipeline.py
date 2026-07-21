@@ -69,3 +69,14 @@ def test_pipeline_writes_report(tmp_path, monkeypatch):
     assert output_path.is_file()
     html = output_path.read_text()
     assert "Store 1" in html or "Store 2" in html
+
+
+def test_main_returns_error_for_missing_data_file(tmp_path, capsys):
+    missing_path = tmp_path / "does_not_exist.csv"
+
+    exit_code = app.main(["--data", str(missing_path)])
+
+    assert exit_code == 1
+    captured = capsys.readouterr()
+    assert "error: could not read data file" in captured.err
+    assert str(missing_path) in captured.err

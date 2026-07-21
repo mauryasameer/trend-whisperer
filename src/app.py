@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import logging
+import sys
 
 import pandas as pd
 from forge.llm.claude import ClaudeProvider
@@ -46,7 +47,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--output", default="reports/model_report.html")
     args = parser.parse_args(argv)
 
-    data = pd.read_csv(args.data)
+    try:
+        data = pd.read_csv(args.data)
+    except (FileNotFoundError, pd.errors.ParserError) as exc:
+        print(f"error: could not read data file {args.data}: {exc}", file=sys.stderr)
+        return 1
     store_ids = (
         [int(s) for s in args.stores.split(",")] if args.stores else top_n_stores(data, args.top_n)
     )
