@@ -5,6 +5,11 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-07-26
+
+### Added
+- Portfolio-ready TrendWhisperer project hero displayed in the README
+
 ## [0.1.0] - 2026-07-21
 
 ### Added
@@ -22,4 +27,5 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 - Generated CI test job was missing a `pytest` install, causing every run to fail with `pytest: command not found`
 
+[0.1.1]: https://github.com/mauryasameer/trend-whisperer/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/mauryasameer/trend-whisperer/releases/tag/v0.1.0
