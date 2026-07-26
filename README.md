@@ -1,5 +1,7 @@
 # TrendWhisperer
 
+![TrendWhisperer forecasting and AI narrative project hero](docs/assets/trendwhisperer-portfolio-hero.png)
+
 ![Version](https://img.shields.io/badge/version-0.1.0-blue)
 
 Per-store sales forecasting (VAR/VARMAX/VECM) over the Kaggle Rossmann Store Sales dataset,
