@@ -5,6 +5,13 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-08-26
+
+### Fixed
+- CI tested against a `["3.11", "3.12"]` Python version matrix, against standing instruction to
+  support exactly one Python version. Single job now, Python 3.12 only. `requires-python`
+  narrowed to `>=3.12`, ruff `target-version` bumped to `py312`.
+
 ## [0.1.1] - 2026-07-26
 
 ### Added
@@ -27,5 +34,6 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Fixed
 - Generated CI test job was missing a `pytest` install, causing every run to fail with `pytest: command not found`
 
+[0.1.2]: https://github.com/mauryasameer/trend-whisperer/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/mauryasameer/trend-whisperer/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/mauryasameer/trend-whisperer/releases/tag/v0.1.0
