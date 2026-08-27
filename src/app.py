@@ -5,9 +5,9 @@ import logging
 import sys
 
 import pandas as pd
-from forge.llm.claude import ClaudeProvider
-from forge.llm.ollama import OllamaProvider
-from forge.llm.openai_provider import OpenAIProvider
+from meerax.llm.claude import ClaudeProvider
+from meerax.llm.ollama import OllamaProvider
+from meerax.llm.openai_provider import OpenAIProvider
 
 from src.providers.var_provider import VARForecastProvider
 from src.providers.varmax_provider import VARMAXForecastProvider

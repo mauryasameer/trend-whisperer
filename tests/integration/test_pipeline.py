@@ -1,5 +1,5 @@
 import pandas as pd
-from forge.llm.base import LLMResponse
+from meerax.llm.base import LLMResponse
 
 from src import app
 

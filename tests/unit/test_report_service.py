@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from forge.eval.timeseries import TimeSeriesMetrics
+from meerax.eval.timeseries import TimeSeriesMetrics
 
 from src.services.forecast_service import StoreForecastResult
 from src.services.narrative_service import NarrativeResult

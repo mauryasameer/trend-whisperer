@@ -1,5 +1,5 @@
-from forge.eval.timeseries import TimeSeriesMetrics
-from forge.llm.base import LLMResponse
+from meerax.eval.timeseries import TimeSeriesMetrics
+from meerax.llm.base import LLMResponse
 
 from src.services.forecast_service import StoreForecastResult
 from src.services.narrative_service import generate_narrative
