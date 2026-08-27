@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import logging
 
-from forge.llm.base import LLMProvider
-from forge.llm.prompt import PromptTemplate
+from meerax.llm.base import LLMProvider
+from meerax.llm.prompt import PromptTemplate
 
 from src.services.forecast_service import StoreForecastResult
 
