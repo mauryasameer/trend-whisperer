@@ -4,8 +4,8 @@ import logging
 from collections.abc import Callable
 
 import pandas as pd
-from forge.eval.timeseries import TimeSeriesMetrics, evaluate_forecast
-from forge.viz.timeseries import plot_decomposition, plot_forecast
+from meerax.eval.timeseries import TimeSeriesMetrics, evaluate_forecast
+from meerax.viz.timeseries import plot_decomposition, plot_forecast
 
 from src.core.interfaces import ForecastProvider
 from src.services import diagnostics, preprocessing

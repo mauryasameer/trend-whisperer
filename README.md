@@ -5,9 +5,9 @@
 ![Version](https://img.shields.io/badge/version-0.1.2-blue)
 
 Per-store sales forecasting (VAR/VARMAX/VECM) over the Kaggle Rossmann Store Sales dataset,
-built on [sameer-forge](https://github.com/mauryasameer/the-forge). Adds a GenAI narrative and
-anomaly-explanation layer via `forge.llm`, and renders a self-contained HTML report via
-`forge.report`.
+built on [meerax](https://github.com/mauryasameer/the-forge). Adds a GenAI narrative and
+anomaly-explanation layer via `meerax.llm`, and renders a self-contained HTML report via
+`meerax.report`.
 
 ## Setup
 

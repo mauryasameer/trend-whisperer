@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from forge.eval.timeseries import adf_stationarity
+from meerax.eval.timeseries import adf_stationarity
 
 
 def check_stationarity(series: pd.Series) -> dict[str, float | bool]:

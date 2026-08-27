@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from forge.report.builder import ReportBuilder, ReportSection
+from meerax.report.builder import ReportBuilder, ReportSection
 
 from src.services.forecast_service import StoreForecastResult
 from src.services.narrative_service import NarrativeResult
