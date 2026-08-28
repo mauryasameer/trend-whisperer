@@ -5,6 +5,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-08-28
+### Changed
+- Bumped `kaggle` requirement from `>=1.6` to `>=2.2.4` (Dependabot #15). This script only shells out to the `kaggle` CLI binary (`subprocess.run(["kaggle", "competitions", "download", "-c", ...])`), so the Python API surface never mattered — verified instead that `-c`/`-p` flags are still accepted by kaggle-cli 2.2.4 (confirmed the command reaches the real API and returns a 403 for missing credentials, not an argument-parsing error).
+
 ## [0.1.2] - 2026-08-26
 
 ### Fixed
