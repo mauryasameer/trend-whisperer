@@ -2,7 +2,7 @@
 
 ![TrendWhisperer forecasting and AI narrative project hero](docs/assets/trendwhisperer-portfolio-hero.png)
 
-![Version](https://img.shields.io/badge/version-0.1.3-blue)
+![Version](https://img.shields.io/badge/version-0.1.4-blue)
 
 Per-store sales forecasting (VAR/VARMAX/VECM) over the Kaggle Rossmann Store Sales dataset,
 built on [meerax](https://github.com/mauryasameer/the-forge). Adds a GenAI narrative and
