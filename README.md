@@ -2,7 +2,7 @@
 
 ![TrendWhisperer forecasting and AI narrative project hero](docs/assets/trendwhisperer-portfolio-hero.png)
 
-![Version](https://img.shields.io/badge/version-0.1.4-blue)
+![Version](https://img.shields.io/badge/version-0.1.5-blue)
 
 Per-store sales forecasting (VAR/VARMAX/VECM) over the Kaggle Rossmann Store Sales dataset,
 built on [meerax](https://github.com/mauryasameer/the-forge). Adds a GenAI narrative and
@@ -54,6 +54,21 @@ Output is a single HTML report with one section per forecasted store: metrics
 - `src/services/narrative_service.py` — LLM trend/anomaly narrative generation
 - `src/services/report_service.py` — HTML report assembly
 - `scripts/fetch_data.py` — Kaggle dataset fetch
+
+## Docker
+
+```bash
+docker compose up --build
+```
+
+Set `ANTHROPIC_API_KEY` / `OPENAI_API_KEY` in `.env` (copy from `.env.example`) if using
+`--llm-provider claude` / `--llm-provider openai`; the default `ollama` provider expects Ollama
+running on the host.
+
+## Governance
+
+See [GOVERNANCE.md](./GOVERNANCE.md) for intended use, explainability boundaries, and LLM
+controls.
 
 ## Testing
 

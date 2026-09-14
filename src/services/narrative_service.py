@@ -41,7 +41,7 @@ def generate_narrative(
             mae=result.metrics.mae,
             smape=result.metrics.smape,
         )
-        trend_narrative = llm.generate(trend_prompt).content
+        trend_narrative = llm.generate(trend_prompt, temperature=0.0).content
     except Exception:
         logger.exception("Narrative generation failed for store %s", result.store_id)
         return NarrativeResult(trend_narrative="narrative unavailable", anomaly_narrative=None)
@@ -54,7 +54,7 @@ def generate_narrative(
                 smape=result.metrics.smape,
                 threshold=anomaly_threshold,
             )
-            anomaly_narrative = llm.generate(anomaly_prompt).content
+            anomaly_narrative = llm.generate(anomaly_prompt, temperature=0.0).content
         except Exception:
             logger.exception("Anomaly narrative failed for store %s", result.store_id)
             anomaly_narrative = "anomaly explanation unavailable"
