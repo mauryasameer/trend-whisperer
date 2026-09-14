@@ -62,7 +62,9 @@ def main(argv: list[str] | None = None) -> int:
     llm = LLM_PROVIDERS[args.llm_provider]()
     narratives = {r.store_id: generate_narrative(r, llm) for r in results}
 
-    report = build_report("TrendWhisperer — Sales Forecast Report", results, narratives)
+    report = build_report(
+        "TrendWhisperer — Sales Forecast Report", results, narratives, provider_name=args.provider
+    )
     report.save(args.output)
     print(f"report written to {args.output}")
     return 0
