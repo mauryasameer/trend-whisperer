@@ -10,9 +10,11 @@ class _StubLLM:
         self._content = content
         self._raise_error = raise_error
         self.prompts_seen: list[str] = []
+        self.calls: list[dict] = []
 
     def generate(self, prompt, system=None, **kwargs):
         self.prompts_seen.append(prompt)
+        self.calls.append({"prompt": prompt, "kwargs": kwargs})
         if self._raise_error:
             raise RuntimeError("LLM unreachable")
         return LLMResponse(content=self._content, model="stub", input_tokens=1, output_tokens=1)
@@ -55,3 +57,11 @@ def test_trend_narrative_falls_back_on_llm_failure():
     narrative = generate_narrative(result, llm)
     assert narrative.trend_narrative == "narrative unavailable"
     assert narrative.anomaly_narrative is None
+
+
+def test_narrative_calls_pass_temperature_zero():
+    result = _make_result(smape=25.0)
+    llm = _StubLLM(content="narrative text")
+    generate_narrative(result, llm, anomaly_threshold=20.0)
+    assert len(llm.calls) == 2
+    assert all(call["kwargs"].get("temperature") == 0.0 for call in llm.calls)

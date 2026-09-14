@@ -3,6 +3,15 @@
 All notable changes to this project will be documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [0.1.5] - 2026-09-14
+### Added
+- `Dockerfile`/`docker-compose.yml`/`.env.example` for one-click `docker compose up --build` deploy.
+- `GOVERNANCE.md` — intended use, explainability boundary, fairness scope (not applicable to this domain's features), LLM controls, audit trail, regulatory framing.
+- Permanent governance banner and a "Run Info" audit block (provider, store count, timestamp) embedded in every generated report; narrative content is now HTML-escaped before embedding.
+
+### Fixed
+- `narrative_service.py`'s trend and anomaly LLM calls now pass `temperature=0.0` explicitly — previously omitted, so narratives used non-deterministic default sampling instead of reproducible, audit-sensitive output.
+
 ## [Unreleased]
 
 ## [0.1.4] - 2026-08-28
