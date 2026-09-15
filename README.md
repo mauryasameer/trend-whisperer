@@ -2,7 +2,7 @@
 
 ![TrendWhisperer forecasting and AI narrative project hero](docs/assets/trendwhisperer-portfolio-hero.png)
 
-[![Version](https://img.shields.io/badge/version-0.1.5-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.1.6-blue)](CHANGELOG.md)
 [![CI](https://github.com/mauryasameer/trend-whisperer/actions/workflows/ci.yml/badge.svg)](https://github.com/mauryasameer/trend-whisperer/actions)
 [![Python](https://img.shields.io/badge/python-3.12-3776AB)](https://www.python.org)
 [![License](https://img.shields.io/badge/license-MIT-informational)](LICENSE)
